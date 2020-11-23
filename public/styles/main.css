@@ -1,0 +1,171 @@
+body{
+    background-color: var(--white);
+}
+header{
+    background-color:var(--yellow);
+    width: 100%;
+    height: 100vh;
+    user-select: none;
+}
+header .title{
+    flex-wrap: wrap;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+header .bac{
+    font-size: 7rem;
+    color: var(--white);
+    text-shadow: 0.3rem 0 0.3rem var(--black);
+}
+header .bac span{
+    color: inherit;
+    text-shadow: 0.2rem 0 0.2rem var(--black);
+}
+header .h{
+    color: var(--black);
+    font-size: 7rem;
+}
+header .elper{
+    font-size: 5rem;
+}
+header h2.desc{
+    font-weight: 700;
+    text-align: center;
+    margin: 2rem 0;
+}
+.nav{
+    position: sticky;
+    top:0;
+    z-index: 3;
+    width: 100%;
+    background-color: var(--yellow);
+    padding: 0.75rem 1rem;
+    justify-content: space-between;
+    user-select: none;
+    display: none;
+}
+.nav img{
+    height: 2rem;
+    cursor: pointer;
+}
+main.flex-row{
+    width: 100%;
+    background-color: var(--white);
+    box-shadow: inset var(--black) 0 2rem 4rem -4rem;
+    align-items: stretch;
+}
+.menu{
+    user-select: none;
+    padding-top: 2rem;
+    width: 25%;
+    border-right: solid 1px var(--black);
+}
+.menu .fullbox{
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.menu ul{
+    position: sticky;
+    top:0;
+    list-style: none;
+    width: 100%;
+    overflow: hidden;
+}
+.menu li{
+    cursor: pointer;
+    width: 100%;
+    margin: 1rem 0;
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    font-size: 1.5rem;
+    height: 4rem;
+    transition: background-color 0.2s ease,
+                color 0.2s ease,
+                font-weight 0.2s ease,
+                font-size 0.2s ease,
+                text-shadow 0.2s ease;
+}
+.menu li:hover{
+    background-color: var(--yellow);
+    font-weight: 700;
+    font-size: 1.75rem;
+}
+.menu .active{
+    background-color: var(--yellow);
+    font-weight: 700;
+    font-size: 1.75rem;
+}
+.menu .close{
+    display: none;
+}
+.container{
+    flex: 1;
+    width: 75%;
+    padding: 1rem  min(5%, 2rem);
+    position: relative;
+}
+.container div[tab]{
+    width: 100%;
+    min-height: 10rem;
+    display: none;
+}
+.container div[tab].active{
+    display: flex;
+}
+footer{
+    background-color: var(--black);
+    width: 100%;
+    height: 15rem;
+}
+footer p{
+    color: var(--white);
+    cursor: pointer;
+}
+footer p:hover{
+    color:var(--yellow);
+}
+@media (orientation: portrait){
+    .nav{
+        display: flex;
+    }
+    .menu{
+        position: fixed;
+        top:0;
+        left: -100%;
+        justify-content: flex-start;
+        align-items: flex-start;
+        z-index: 10;
+        width: 100%;
+        padding: 0;
+        height: 120%;
+        border-right: none;
+        transition: left 0.4s ease;
+    }
+    .menu .fullbox{
+        width: 75%;
+        box-shadow: 0 0 50rem 0.5rem var(--black);
+    }
+    .menu .close{
+        background-color: var(--white);
+        display: flex;
+        justify-content: flex-end;
+        width: 100%;
+        padding: 2rem 0;
+    }
+    .menu .close img{
+        cursor: pointer;
+        height: 3rem;
+        margin-right: 1rem;
+    }
+    .menu ul{
+        height: 100%;
+        width: 100%;
+        z-index: 4;
+        background-color: var(--white);
+    }
+    .container{
+        width: 100%;
+    }
+}

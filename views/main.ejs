@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>&#x2666; BACH</title>
+    <link rel="stylesheet" href="../public/styles/root.css">
+    <link rel="stylesheet" href="../public/styles/main.css">
+    <link rel="stylesheet" href="../public/styles/tab-autori.css">
+    <link rel="stylesheet" href="../public/styles/tab-curente.css">
+    <link rel="stylesheet" href="../public/styles/tab-opere.css">
+    <link rel="stylesheet" href="../public/styles/tab-perioade.css">
+    
+    <script src="../public/scripts/main.js" defer></script>
+</head>
+<body class="flex-column">
+    <header class="flex-column">
+        <div class="title">
+            <h1 class="bac flex-row">BAC</h1>
+            <h1 class="h">H<span class='elper'>elper</span></h1>
+        </div>
+       <h2 class="desc">Pe acest site vei gasi ce va invata cj pentru bacul la romana</h2>
+    </header>
+    <div id="main" class="nav flex-row">
+        <img onclick="showMenu()" src="../public/res/UI/menu.svg" alt="">
+        <h3 id="tab-title">Curente</h3>
+    </div>
+    <main class="flex-row">
+        <div id='menu' class='menu flex-column'>
+            <div class="fullbox flex-column" >
+                <div class='close'>
+                    <img onclick="hideMenu(this)" src="../public/res/UI/close.svg" alt="">
+                </div>
+                <ul>
+                    <li option="curente" class="option active">Curente</li>
+                    <li option="perioade" class="option">Perioade</li>
+                    <li option="autori" class="option">Autori</li>
+                    <li option="opere" class="option">Opere</li>
+                </ul>
+            </div>
+        </div>
+        <section class='container flex-column'>
+            <div id='loading' class="loading flex-column">
+                <img  src="/public/res/UI/loading.svg">
+            </div>
+
+            <div tab="curente" class="active flex-row">
+                <%for(let i =1;i<=6;i++){%>
+                    <div class="box flex-column">
+                        <div class="title flex-row">REALISMUL</div>
+                        <div class="desc flex-row">
+                            <div class="overlay"></div>
+                            Curent cultural si literar manifestat Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia quasi suscipit doloribus, iure animi molestiae aliquam, maiores autem, consequuntur in neque recusandae soluta perspiciatis eum inventore cupiditate aspernatur facere hic. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Exercitationem, possimus eaque. Saepe facilis aliquid veritatis! Totam, ipsum, nobis blanditiis ipsam incidunt veniam esse quas at, corrupti enim cum numquam. Alias tempora harum quam officiis voluptatum ad, maxime praesentium aut consequuntur. 
+                        </div>
+                        <div class="more flex-row">
+                            <button>Compare</button>
+                            <div compara="realism"></div>
+                        </div>
+                    </div>
+                <%}%>
+            </div>
+            <div tab="perioade">
+                <%for(let i =1;i<=6;i++){%>
+                    <div class="box flex-column">
+                        <div class="overlay"></div>
+                        <div class="title">Interbelica</div>
+                        <div class="content">
+                            Perioada interbelica este intre 1918-1940
+                        </div>
+                    </div>
+                <%}%>
+            </div>
+            <div tab="autori">
+                Autori
+            </div>
+            <div tab="opere">
+                Opere
+            </div>
+            
+        </section>
+    </main>
+    <footer class='flex-row'>
+        <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi laborum sunt explicabo adipisci impedit beatae maiores voluptatibus quam repellendus. Sed.
+        </p>
+    </footer>
+</body>
+</html>
