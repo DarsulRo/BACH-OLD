@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../public/styles/root.css">
+    <link rel="stylesheet" href="../public/styles/curente.css">
+    <title><%=curent.name%></title>
+</head>
+<body>
+    <nav>
+        <a href="/">Go back</a>
+    </nav>
+    <main class="flex-column">
+        <h1 class="title" style="background-color: var(--<%=curent.short%>); color:<%=curent.titlecolor%>">
+            <%=curent.name%>
+        </h1>
+
+
+        <h4 class="subtitle">
+            Trăsături
+        </h4>
+        <div class="grid">
+
+            <p class="name">Definiție</p>
+            <p class=value><%=curent.definitie%></p>
+
+
+            <%for(let i=0;i<curent.trasaturi.length;i++){ trasatura = curent.trasaturi[i]%>
+                
+                <p class="name">
+                    <%=trasatura.name%> 
+                </p>
+                <p class="value">
+                    <%=trasatura.value%>
+                </p>
+            <%}%>
+        </div>
+        <h3 class="reprez">Reprezentanți</h3>
+        <div class="autori flex-row">
+            <%autori.forEach(autor => {%>
+                <a href="/autori/<%=autor.short%>" class="autor"  style="background-color: var(--<%=curent.short%>); color:<%=curent.titlecolor%>">
+                    <%=autor.name%>
+                </a>
+            <%});%>
+        </div>
+        
+        
+    <a class="back" href="/">Go back</a>
+    </main>
+    
+    
+</body>
+</html>

@@ -1,0 +1,15 @@
+[tab='autori'] .card .top{
+    background-size: cover;
+}
+[tab='autori'] .card .top .overlay{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    opacity: 80%;
+}
+[tab='autori'] .card .top h2{
+    z-index: 3;
+}

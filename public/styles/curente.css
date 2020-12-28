@@ -1,0 +1,79 @@
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+nav{
+    width: 100%;
+    padding: 1rem;
+    background-color: var(--yellow);
+}
+nav a{
+    text-decoration: none;
+    font-size: 1.5rem;
+    margin-left: 2rem;
+}
+nav a:hover{
+    text-decoration: underline;
+}
+main{
+    width: min(100%, 50rem);
+    padding: 4rem 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.title{
+    text-align: center;
+    padding: 1rem;
+    width: 100%;
+    border-radius: 5px;
+}
+.subtitle{
+    padding: 4rem 0 1rem 0;
+    font-size: 1.5rem;
+    width: 100%;
+}
+
+div.grid{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+}
+div.grid >*{
+    border: 1px solid lightgray;
+    padding: 2rem 1rem;
+}
+div.grid >*:nth-child(4n+3),div.grid >*:nth-child(4n+4){
+ background-color: gainsboro;   
+}
+.reprez{
+    align-self: flex-start;
+    margin-top: 4rem;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+div.autori{
+    justify-content: space-evenly;
+    width: 100%;
+}
+a.autor{
+    padding: 1rem;
+    margin: 1rem 0;
+    font-size: 1.25rem;
+    border-radius: 3px;
+    text-decoration: none;
+}
+
+.back{
+    font-size: 1.5rem;
+    text-decoration: none;
+    border-radius: 5px;
+    align-self: start;
+    margin-top: 4rem;
+}
+.back:hover{
+    text-decoration: underline;
+}

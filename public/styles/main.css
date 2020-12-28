@@ -37,7 +37,7 @@ header h2.desc{
 .nav{
     position: sticky;
     top:0;
-    z-index: 3;
+    z-index:6;
     width: 100%;
     background-color: var(--yellow);
     padding: 0.75rem 1rem;
@@ -110,10 +110,74 @@ main.flex-row{
     width: 100%;
     min-height: 10rem;
     display: none;
+    flex-wrap: wrap;
+    padding: 2rem 0;
 }
 .container div[tab].active{
     display: flex;
 }
+
+
+[tab] .card{
+    width: 18rem;
+    height: 14rem;
+    position: relative;
+    margin: 5rem 0.5rem;
+ }
+ [tab] .card .top{
+     position: absolute;
+     width: 100%;
+     height: 100%;
+     z-index: 3;
+     top:0;
+     border-radius: 3px;
+     transition: all 0.5s ease;
+     cursor: pointer;
+ }
+ [tab] .card .top h2{
+     color: var(--white);
+     font-weight: 400;
+     font-size: 1.5rem;
+     text-align: center;
+ }
+ [tab] .card .bottom{
+     justify-content: space-evenly;
+     color: gray;
+     padding: 1rem;
+     position: absolute;
+     width: 100%;
+     height: 100%;
+     border-radius: 3px;
+     z-index: 2;
+     box-shadow: 0 10px 15px -1px gray;
+     bottom: 0;
+     transition: all 0.5s ease;
+ }
+ [tab] .card .bottom h3{
+     color: var(--black);
+ }
+ [tab] .card .bottom p{
+     font-size: 0.8rem;
+     text-align: justify;
+ }
+ [tab] .card:hover .top{
+     top: -50%;
+ }
+ [tab] .card:hover .bottom{
+     bottom: -50%;
+ }
+
+[tab] .card .ui{
+    width: 100%;
+}
+[tab] .card .ui img{
+    height: 1.5rem;
+    margin-left: 1rem;
+    cursor: pointer;
+}
+
+
+
 footer{
     background-color: var(--black);
     width: 100%;
@@ -126,6 +190,11 @@ footer p{
 footer p:hover{
     color:var(--yellow);
 }
+
+
+
+
+
 @media (orientation: portrait){
     .nav{
         display: flex;
