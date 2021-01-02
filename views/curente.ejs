@@ -5,12 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../public/styles/root.css">
     <link rel="stylesheet" href="../public/styles/curente.css">
+    <link rel="shortcut icon" href="../public/res/UI/favicon.ico" type="image/x-icon">
     <title><%=curent.name%></title>
 </head>
 <body>
-    <nav>
-        <a href="/">Go back</a>
-    </nav>
+    <%-include('partials/nav')%>
     <main class="flex-column">
         <h1 class="title" style="background-color: var(--<%=curent.short%>); color:<%=curent.titlecolor%>">
             <%=curent.name%>

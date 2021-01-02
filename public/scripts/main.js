@@ -50,6 +50,17 @@ var curenteBTN = document.querySelector('[option=curente]')
 curenteBTN.addEventListener('click',loadCurente)
 async function loadCurente(){
     let curente = await (await fetch('/getcollection/curente')).json()
+    let allperioade = await (await fetch('/getcollection/perioade')).json()
+
+    curente.forEach(curent =>{
+        allperioade.forEach(perioada => {
+            if(JSON.stringify(curent.perioada)==JSON.stringify(perioada.short))
+            {
+                curent.perioadaName = perioada.name
+            }
+        });
+    })
+
     let curenteContainer = document.querySelector('[tab=curente]')
     curenteContainer.innerHTML=''
     curente.forEach(curent=>{
@@ -57,6 +68,7 @@ async function loadCurente(){
     })
 }
 function renderCurent(curent){
+
     let renderedCurent = 
     `
     <div class="card flex-column">
@@ -64,7 +76,7 @@ function renderCurent(curent){
             <h2 class="tit" style="color: ${curent.titlecolor}">${curent.name}</h2>
         </div>
         <div class="bottom flex-column">
-            <h3>${curent.perioada}</h3>
+            <h3>${curent.perioadaName}</h3>
             <p>${curent.definitie}</p>
             <div class="flex-row ui">
                 <a href="/curente/${curent.short}">Read more</a>
@@ -124,6 +136,17 @@ autoriBTN.addEventListener('click', loadAutori)
 
 async function loadAutori(){
     let allautori = await (await fetch('/getcollection/autori')).json()
+    let allperioade = await (await fetch('/getcollection/perioade')).json()
+
+    allautori.forEach(autor => {
+        allperioade.forEach(perioada => {
+            if(JSON.stringify(autor.perioada)==JSON.stringify(perioada.short)){
+                autor.perioadaName = perioada.name
+                
+            }
+        });
+    });
+
     let autoriContainer = document.querySelector('[tab=autori]')
     autoriContainer.innerHTML=''
 
@@ -136,12 +159,12 @@ function renderAutor(autor){
     let AUTOR=
     `
     <div class="card flex-column">
-        <div class="top flex-row" style="background-image: url('../public/res/images/${autor.short}.jpg')" >
+        <div class="top flex-row" style="background-image: url('../public/res/images/${autor.short}.png')" >
             <div class="overlay" style="background-color: var(--${autor.perioada})"></div>
             <h2 class="tit" >${autor.name}</h2>
         </div>
         <div class="bottom flex-column">
-            <h3>${autor.perioada}</h3>
+            <h3>${autor.perioadaName}</h3>
             <p>${autor.date}</p>
             <div class="flex-row ui">
                 <a href="/autori/${autor.short}">Read more</a>

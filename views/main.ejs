@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>&#x2666; BACH</title>
+    <title> BACH</title>
     <link rel="stylesheet" href="../public/styles/root.css">
     <link rel="stylesheet" href="../public/styles/main.css">
-    <link rel="stylesheet" href="../public/styles/autori.css">
-    
+    <link rel="shortcut icon" href="../public/res/UI/favicon.ico" type="image/x-icon">
     <script src="../public/scripts/main.js" defer></script>
+    <script src="../public/data/opere.json"></script>
 </head>
 <body class="flex-column">
     <header class="flex-column">
@@ -58,10 +58,6 @@
             
         </section>
     </main>
-    <footer class='flex-row'>
-        <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi laborum sunt explicabo adipisci impedit beatae maiores voluptatibus quam repellendus. Sed.
-        </p>
-    </footer>
+    <%-include('partials/footer')%>
 </body>
 </html>

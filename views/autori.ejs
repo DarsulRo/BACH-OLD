@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../public/styles/root.css">
+    <link rel="stylesheet" href="../public/styles/autori.css">
+    <link rel="shortcut icon" href="../public/res/UI/favicon.ico" type="image/x-icon">
+    <title>
+        <%=autor.name%>
+    </title>
+</head>
+
+<body>
+    <%-include('partials/nav')%>
+        <main>
+            <div class="top flex-row">
+                <div class="flex-column img">
+                    <img src="../public/res/images/<%=autor.short%>.png" alt="<%=autor.name%>">
+                </div>
+                <div class="flex-column title">
+                    <div class="flex-column">
+                        <h1 class="name">
+                            <%=autor.name%>
+                        </h1>
+                        <h3 class="viata">
+                            <%=autor.viata%>
+                        </h3>
+                    </div>
+                    <a href="/perioade/<%=autor.perioada%>" class="perioada"
+                        style="background-color: var(--<%=autor.perioada%>); color:<%=autor.titlecolor%>">
+                        <%=autor.perioadaName%>
+                    </a>
+                </div>
+            </div>
+            <div class="info">
+                <p>
+                    <%=autor.date%>
+                </p>
+                <p>
+                    <%=autor.opera%>
+                </p>
+            </div>
+            
+        </main>
+        <%-include('partials/footer')%>
+</body>
+
+</html>

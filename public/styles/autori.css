@@ -1,15 +1,69 @@
-[tab='autori'] .card .top{
-    background-size: cover;
-}
-[tab='autori'] .card .top .overlay{
-    width: 100%;
-    height: 100%;
+
+nav{
     position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 2;
-    opacity: 80%;
+    z-index: 4;
+    top:0;
 }
-[tab='autori'] .card .top h2{
-    z-index: 3;
+main{
+    width: min(90%, 50rem);
+    margin: auto;
+    padding: 1rem;
+    border-radius: 1rem;
+    margin-top: 5rem;
+    box-shadow: 0 0 30rem 1rem lightgray;
+}
+.top{
+    justify-content: space-around;
+    margin: 2rem 0;
+    flex-wrap: wrap;
+    
+}
+.top .img{
+    width: min(90%, 20rem);
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 2rem 0;
+}
+.top img{
+    width: 100%;
+    object-fit: contain;
+    
+}
+
+.top .title{
+    margin: 1.5rem 0.5rem;
+    justify-content: space-between;
+}
+.top .title .name{
+    margin: 0.5rem 0;
+    font-size: min(10vw, 2.5rem);
+}
+.top .viata{
+    margin: 0.5rem 0;
+    font-size: min(5vw, 1.5rem);
+}
+.top .perioada{
+    margin: 0.5rem 0;
+    font-size: min(5vw, 1.5rem);
+    padding: 1rem;
+    font-weight: 600;
+    border-radius: 5px;
+    text-decoration: none;
+}
+.info{
+    margin: 1rem 0;
+    width: min(100%, 30rem);
+}
+.info p{
+    margin: 2rem 0;
+    font-size: 1.15rem;
+}
+.test{
+    text-align: justify;
+}
+.test::after{
+    content: "";
+  display: inline-block;
+  width: 100%;
 }

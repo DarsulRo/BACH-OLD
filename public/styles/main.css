@@ -169,27 +169,37 @@ main.flex-row{
 
 [tab] .card .ui{
     width: 100%;
+    justify-content: space-between;
+}
+[tab] .card .bottom .ui *{
+    font-size: 1rem;
+    text-decoration: none;
+}
+[tab] .card .bottom .ui a:hover{
+    text-decoration: underline;
 }
 [tab] .card .ui img{
     height: 1.5rem;
     margin-left: 1rem;
     cursor: pointer;
 }
-
-
-
-footer{
-    background-color: var(--black);
+[tab='autori'] .card .top{
+    background-size: cover;
+}
+[tab='autori'] .card .top .overlay{
     width: 100%;
-    height: 15rem;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    opacity: 80%;
 }
-footer p{
-    color: var(--white);
-    cursor: pointer;
+[tab='autori'] .card .top h2{
+    z-index: 3;
 }
-footer p:hover{
-    color:var(--yellow);
-}
+
+
 
 
 

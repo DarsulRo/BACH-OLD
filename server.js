@@ -3,15 +3,15 @@ const server = express()
 var { Mongo } = require('./mongo')
 
 
-
 server.set('view engine','ejs')
 server.use('/public',express.static('public'))
 server.use(logger)
 
+
 server.get('/',function(req,res){
     res.render('main')
+    
 })
-
 server.get('/getcollection/:collection',async function(req,res){
     let collection = await Mongo.db.db('bach').collection(req.params.collection).find({enabled: {$ne :false}}).sort({order:1}).toArray()
     res.json(collection)
@@ -22,11 +22,21 @@ server.get('/curente/:short', async function(req,res){
 
     res.render('curente', {curent, autori})
 })
+server.get('/autori/:short', async function(req,res){
+    let autor = await Mongo.db.db('bach').collection('autori').findOne({short:req.params.short})
+    let perioada = await Mongo.db.db('bach').collection('perioade').findOne({short:autor.perioada})
+    autor.perioadaName = perioada.name
+    autor.titlecolor = perioada.titlecolor
+    res.render('autori',{autor})
+})
+
+
+
+
 function logger(req,res,next){
     console.log(`[`+req.method+'] Request made at ['+new Date().toLocaleTimeString() + '] by [' + req.ip + '] for [' + req.url + ']')
     next()
 }
-
 async function start(){
     await Mongo.connectToMongo()
     const port = 8000
